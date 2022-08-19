@@ -9,5 +9,5 @@ const root = ReactDOM.createRoot(
 root.render(
   <ThemeProvider theme={theme}>
     <App />
-    </ThemeProvider>
+  </ThemeProvider>
 );

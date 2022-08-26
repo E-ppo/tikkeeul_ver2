@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import ""
 
 
 const GlobalStyle = createGlobalStyle`
@@ -47,4 +47,37 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+
+/* FONT */
+
+@font-face {
+    font-family: 'SEBANG_Gothic_Bold';
+    src: url("./font/SEBANG-Gothic-OTF-Bold.otf") format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SEBANG_Gothic';
+    src: url("./font/SEBANG-Gothic-OTF.otf") format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSansKR-Regular';
+    src: url("./font/NotoSansKR-Regular.otf") format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSansKR-Medium';
+    src: url("./font/NotoSansKR-Medium.otf") format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 `;

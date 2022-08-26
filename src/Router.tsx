@@ -5,7 +5,6 @@ import { ChooseTeasan, Community, DailyTikkeeul, DetailPost, FindPassword,
 
 const Router = () => {
   return (
-    <BrowserRouter>
       <Routes>
         <Route path="/" element={<DailyTikkeeul/>}/>
         <Route path="/chooseteasan" element={<ChooseTeasan/>}/>
@@ -17,7 +16,6 @@ const Router = () => {
         <Route path="/ranking" element={<Ranking/>}/>
         <Route path="/realtimechatting" element={<RealtimeChatting/>}/>
       </Routes>
-    </BrowserRouter>
   )
 
 }

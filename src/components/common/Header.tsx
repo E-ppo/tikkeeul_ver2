@@ -14,8 +14,11 @@ const slider = keyframes`
   }
 `;
 
+interface IPropsData{
+  title:string
+}
 
-const Header = (props) => {
+const Header = (props : IPropsData) => {
 
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = () => { setModalOpen(true); };

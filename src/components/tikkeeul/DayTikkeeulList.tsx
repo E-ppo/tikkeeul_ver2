@@ -7,7 +7,7 @@ const DayTikkeeulList = () =>{
 
   return (
     <Wrap>
-      
+
       <LeftArrowBlack/>
       <span>{today}</span>
       <RightArrowBlack/>

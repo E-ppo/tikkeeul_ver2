@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NoticeHandBig } from '../styles/assets/svg';
+import { NoticeHandBig } from '../styles/assets/svg/common';
 
 function Notice() {
   return (

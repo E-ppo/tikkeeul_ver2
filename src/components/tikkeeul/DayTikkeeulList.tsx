@@ -1,8 +1,11 @@
-import styled from "styled-components";
-import { LeftArrowBlack, RightArrowBlack } from "../../styles/assets/svg";
+import styled from 'styled-components';
+import {
+  LeftArrowBlack,
+  RightArrowBlack,
+} from '../../styles/assets/svg/common';
 
 const DayTikkeeulList = () => {
-  const today = new Date().toJSON().split("T", 1);
+  const today = new Date().toJSON().split('T', 1);
 
   return (
     <Wrap>

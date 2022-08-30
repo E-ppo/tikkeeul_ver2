@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { HeaderLogo, HeaderHam } from '../../styles/assets/svg';
+import { HeaderLogo, HeaderHam } from '../../styles/assets/svg/common';
 import styled, { keyframes } from 'styled-components';
 
 const slider = keyframes`

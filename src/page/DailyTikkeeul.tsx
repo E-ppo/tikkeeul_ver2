@@ -1,23 +1,25 @@
-import styled from "styled-components";
-import Header from "../components/common/Header";
+import styled from 'styled-components';
+import Header from '../components/common/Header';
 import {
   DayTikkeeulList,
   Teasan,
-  TotalTikkeeul
-} from "../components/tikkeeul"
+  TotalTikkeeul,
+  FavoriteTag,
+} from '../components/tikkeeul';
 
-function DailyTikkeeul(){
+function DailyTikkeeul() {
   return (
     <Wrap>
-      <Header title={"데일리 티끌"}/>
-      <Teasan/>
-      <TotalTikkeeul/>
-      <DayTikkeeulList/> 
+      <Header title={'데일리 티끌'} />
+      <Teasan />
+      <TotalTikkeeul />
+      <DayTikkeeulList />
+      <FavoriteTag />
     </Wrap>
-  )
+  );
 }
 export default DailyTikkeeul;
 
 const Wrap = styled.div`
-width: 100%;
+  width: 100%;
 `;

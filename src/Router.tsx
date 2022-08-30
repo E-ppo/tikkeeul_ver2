@@ -13,7 +13,6 @@ import {
 
 const Router = () => {
   return (
-    <BrowserRouter>
       <Routes>
         <Route path="/" element={<DailyTikkeeul />} />
         <Route path="/choosetaesan" element={<ChooseTaesan />} />
@@ -25,7 +24,8 @@ const Router = () => {
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/realtimechatting" element={<RealtimeChatting />} />
       </Routes>
-    </BrowserRouter>
-  );
-};
-export default Router;
+  )
+
+}
+export default Router
+

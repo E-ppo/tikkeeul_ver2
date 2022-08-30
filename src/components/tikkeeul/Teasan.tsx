@@ -9,13 +9,8 @@ interface ITesanInfo{
 
 const Teasan = () =>{
   return (
-
     <Wrap>
-      <div
-        style={{
-          position: "absolute",
-          width: "100%"
-        }}>
+      <TeasanInsideWrap>
         <TesanProductInfo>
           <div><img src="https://velog.velcdn.com/images/eppo/post/2e1a14ff-f6cd-4f63-9cd1-330722065e62/image.png" alt="" /></div>
           <div><span>공기청정기</span></div>
@@ -23,10 +18,8 @@ const Teasan = () =>{
         <TesanPriceInfo>
           <span>320,000원까지 50%</span>
         </TesanPriceInfo>
-      </div>
-
+      </TeasanInsideWrap>
       <TeasanPercentView />
-
     </Wrap>
 
   )
@@ -43,6 +36,11 @@ justify-content: flex-end;
 
 `;
 
+const TeasanInsideWrap = styled.div`
+position: absolute;
+width: 100%;
+`;
+
 const TeasanPercentView = styled.div`
 bottom: 0;
 background-color: ${(props)=> props.theme.mainMintColor};
@@ -51,7 +49,6 @@ height: 50%;
 `;
 
 const TesanProductInfo = styled.div`
-
   display: flex;
   margin: 0 30px;
   justify-content: space-between;
@@ -69,7 +66,6 @@ const TesanProductInfo = styled.div`
       border-radius: 50%;
     }
   }
-
 
   div:last-child{
     display: flex;

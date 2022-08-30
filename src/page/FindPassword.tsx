@@ -1,4 +1,4 @@
 function FindPassword() {
-  return <div>ChooseTeasan</div>;
+  return <div>FindPassword</div>;
 }
 export default FindPassword;

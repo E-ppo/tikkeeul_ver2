@@ -1,7 +1,7 @@
 
 function DetailPost(){
   return(
-    <div>ChooseTeasan</div>
+    <div>DetailPost</div>
 
   )
 }

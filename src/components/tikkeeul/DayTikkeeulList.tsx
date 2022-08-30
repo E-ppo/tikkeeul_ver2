@@ -1,19 +1,17 @@
 import styled from "styled-components";
-import {LeftArrowBlack, RightArrowBlack} from "../../styles/assets/svg"
+import { LeftArrowBlack, RightArrowBlack } from "../../styles/assets/svg";
 
-
-const DayTikkeeulList = () =>{
-  const today = new Date().toJSON().split('T',1);
+const DayTikkeeulList = () => {
+  const today = new Date().toJSON().split("T", 1);
 
   return (
     <Wrap>
-
-      <LeftArrowBlack/>
+      <LeftArrowBlack />
       <span>{today}</span>
-      <RightArrowBlack/>
-    
-    </Wrap>)
-}
+      <RightArrowBlack />
+    </Wrap>
+  );
+};
 export default DayTikkeeulList;
 
 const Wrap = styled.div`
@@ -22,11 +20,8 @@ const Wrap = styled.div`
   margin: 0 30px;
   justify-content: space-between;
 
-  span{
-
+  span {
     font-size: 1rem;
     font-weight: 500;
-        
   }
 `;
-

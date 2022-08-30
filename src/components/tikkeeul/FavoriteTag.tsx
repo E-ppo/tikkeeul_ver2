@@ -2,6 +2,18 @@ import { Favorite } from '../../data';
 import styled from 'styled-components';
 import { FavoritDelete } from '../../styles/assets/svg/tikkeeulSvg';
 
+interface IFavoriteList {
+  totalPrice: number;
+  data: [
+    {
+      categoryId: number;
+      itemId: number;
+      itemName: string;
+      price: number;
+    }
+  ];
+}
+
 const FavoriteTag = () => {
   const addTikkeeulList = () => {};
   const deleteFavoriteTag = () => {};

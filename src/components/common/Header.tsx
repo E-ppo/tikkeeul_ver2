@@ -53,7 +53,7 @@ const Header = (props: IPropsData) => {
                 </div>
                 <div
                   onClick={() => {
-                    navigate('/chooseteasan');
+                    navigate('/choosetaesan');
                   }}>
                   태산정하기
                 </div>

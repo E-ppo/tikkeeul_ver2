@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    font-family: 'NotoSansKR_Regular';
 }
 ol, ul {
 	list-style: none;
@@ -50,29 +51,30 @@ table {
 
 /* FONT */
 
+
+@font-face {
+    font-family: 'SEBANG_Gothic_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @font-face {
     font-family: 'SEBANG_Gothic_Bold';
-    src: url("./font/SEBANG-Gothic-OTF-Bold.otf") format('otf');
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'SEBANG_Gothic';
-    src: url("./font/SEBANG-Gothic-OTF.otf") format('otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'NotoSansKR-Regular';
+    font-family: 'NotoSansKR_Regular';
     src: url("./font/NotoSansKR-Regular.otf") format('otf');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'NotoSansKR-Medium';
+    font-family: 'NotoSansKR_Medium';
     src: url("./font/NotoSansKR-Medium.otf") format('otf');
     font-weight: normal;
     font-style: normal;

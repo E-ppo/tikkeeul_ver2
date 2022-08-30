@@ -112,7 +112,7 @@ const Wrap = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  font-family: "SEBANG_Gothic";
+  font-family: "SEBANG_Gothic_Regular";
   font-size: 1.5rem;
 `;
 

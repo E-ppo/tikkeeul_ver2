@@ -79,3 +79,5 @@ table {
 }
 
 `;
+
+export default GlobalStyle;

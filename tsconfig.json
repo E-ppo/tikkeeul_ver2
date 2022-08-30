@@ -17,7 +17,6 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src/components",
-     "src/custom.d.ts"
+    "src"
   ]
 }

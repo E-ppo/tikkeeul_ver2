@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 import {
   ChooseTaesan,
   Community,
@@ -9,20 +9,22 @@ import {
   MyPage,
   Ranking,
   RealtimeChatting,
-} from "./page";
+  Notice,
+} from './page';
 
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<DailyTikkeeul />} />
-      <Route path="/choosetaesan" element={<ChooseTaesan />} />
-      <Route path="/community" element={<Community />} />
-      <Route path="/detailpost" element={<DetailPost />} />
-      <Route path="/findpassword" element={<FindPassword />} />
-      <Route path="/loginpage" element={<LoginPage />} />
-      <Route path="/mypage" element={<MyPage />} />
-      <Route path="/ranking" element={<Ranking />} />
-      <Route path="/realtimechatting" element={<RealtimeChatting />} />
+      <Route path='/' element={<Notice />} />
+      <Route path='/dailytikkeeul' element={<DailyTikkeeul />} />
+      <Route path='/choosetaesan' element={<ChooseTaesan />} />
+      <Route path='/community' element={<Community />} />
+      <Route path='/detailpost' element={<DetailPost />} />
+      <Route path='/findpassword' element={<FindPassword />} />
+      <Route path='/loginpage' element={<LoginPage />} />
+      <Route path='/mypage' element={<MyPage />} />
+      <Route path='/ranking' element={<Ranking />} />
+      <Route path='/realtimechatting' element={<RealtimeChatting />} />
     </Routes>
   );
 };

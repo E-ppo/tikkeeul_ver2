@@ -1,13 +1,13 @@
-import React from 'react';
-import styled, { GlobalStyleComponent } from 'styled-components';
-import Router from './Router';
+import React from "react";
+import Router from "./Router";
+import GlobalStyle from "./styles/GlobalStyle";
+
 
 function App() {
   return (
-    <>
-    <Router/>
+      <GlobalStyle />
+      <Router />
     </>
   );
 }
 export default App;
-

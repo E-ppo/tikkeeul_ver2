@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -29,6 +29,11 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    span{
+    font-weight: 700; 
+}
 }
 ol, ul {
 	list-style: none;
@@ -46,36 +51,22 @@ table {
 	border-spacing: 0;
 }
 
-
-
 /* FONT */
 
 @font-face {
+    font-family: 'SEBANG_Gothic_Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'SEBANG_Gothic_Bold';
-    src: url("./font/SEBANG-Gothic-OTF-Bold.otf") format('otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SEBANG_Gothic';
-    src: url("./font/SEBANG-Gothic-OTF.otf") format('otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'NotoSansKR-Regular';
-    src: url("./font/NotoSansKR-Regular.otf") format('otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'NotoSansKR-Medium';
-    src: url("./font/NotoSansKR-Medium.otf") format('otf');
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 `;
+
+export default GlobalStyle;

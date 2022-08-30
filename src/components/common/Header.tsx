@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { HeaderLogo, HeaderHam } from "../../styles/assets/svg";
-import styled, { keyframes } from "styled-components";
+import { HeaderLogo, HeaderHam } from '../../styles/assets/svg';
+import styled, { keyframes } from 'styled-components';
 
 const slider = keyframes`
   from {
@@ -47,44 +47,38 @@ const Header = (props: IPropsData) => {
               <MenuBar>
                 <div
                   onClick={() => {
-                    navigate("/");
-                  }}
-                >
+                    navigate('/');
+                  }}>
                   데일리 티끌
                 </div>
                 <div
                   onClick={() => {
-                    navigate("/chooseteasan");
-                  }}
-                >
+                    navigate('/chooseteasan');
+                  }}>
                   태산정하기
                 </div>
                 <div
                   onClick={() => {
-                    navigate("/community");
-                  }}
-                >
+                    navigate('/community');
+                  }}>
                   커뮤니티
                 </div>
                 <div
                   onClick={() => {
-                    navigate("/ranking");
-                  }}
-                >
+                    navigate('/ranking');
+                  }}>
                   랭킹
                 </div>
                 <div
                   onClick={() => {
-                    navigate("/mypage");
-                  }}
-                >
+                    navigate('/mypage');
+                  }}>
                   MY
                 </div>
                 <div
                   onClick={() => {
-                    navigate("/mypage");
-                  }}
-                >
+                    navigate('/mypage');
+                  }}>
                   About
                 </div>
               </MenuBar>
@@ -96,7 +90,7 @@ const Header = (props: IPropsData) => {
           </Window>
         </Backgroud>
       ) : (
-        ""
+        ''
       )}
     </Wrap>
   );
@@ -112,7 +106,7 @@ const Wrap = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  font-family: "SEBANG_Gothic";
+  font-family: 'SEBANG_Gothic_Regular';
   font-size: 1.5rem;
 `;
 
@@ -176,4 +170,5 @@ const MenuBar = styled.div`
 const Footer = styled.div`
   display: flex;
   justify-content: space-around;
+  font-family: 'Noto Sans KR', sans-serif;
 `;

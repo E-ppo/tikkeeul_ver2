@@ -1,4 +1,4 @@
-import ChooseTeasan from "./ChooseTeasan";
+import ChooseTaesan from "./ChooseTaesan";
 import Community from "./Community";
 import DailyTikkeeul from "./DailyTikkeeul";
 import DetailPost from "./DetailPost";
@@ -8,5 +8,14 @@ import MyPage from "./MyPage";
 import Ranking from "./Ranking";
 import RealtimeChatting from "./RealtimeChatting";
 
-export { ChooseTeasan, Community, DailyTikkeeul, LoginPage, MyPage, RealtimeChatting,
-  DetailPost, FindPassword, Ranking }
+export {
+  ChooseTaesan,
+  Community,
+  DailyTikkeeul,
+  LoginPage,
+  MyPage,
+  RealtimeChatting,
+  DetailPost,
+  FindPassword,
+  Ranking,
+};

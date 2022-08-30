@@ -176,4 +176,5 @@ const MenuBar = styled.div`
 const Footer = styled.div`
   display: flex;
   justify-content: space-around;
+  font-family: "Noto Sans KR", sans-serif;
 `;

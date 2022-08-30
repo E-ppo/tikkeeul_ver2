@@ -1,4 +1,1 @@
-
-export const TikkeeulData = {
-
-}
+export const TikkeeulData = {};

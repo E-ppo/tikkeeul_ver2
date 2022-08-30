@@ -1,12 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const TotalTikkeeul = () =>{
+const TotalTikkeeul = () => {
   return (
     <Wrap>
-      <span>내가 모은 티끌 <span>10,000원</span></span>
+      <span>
+        내가 모은 티끌 <span>10,000원</span>
+      </span>
     </Wrap>
-    )
-}
+  );
+};
 export default TotalTikkeeul;
 
 const Wrap = styled.div`
@@ -16,11 +18,10 @@ const Wrap = styled.div`
   align-items: center;
   justify-content: flex-end;
 
-  span{
+  span {
     font-size: 1.2rem;
-    span{
-      color: ${(props)=> props.theme.pointBlueColor};
+    span {
+      color: ${(props) => props.theme.pointBlueColor};
     }
   }
-
 `;

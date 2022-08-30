@@ -47,6 +47,9 @@
   },
   "devDependencies": {
     "@types/react-router": "^5.1.18",
-    "@types/react-router-dom": "^5.3.3"
+    "@types/react-router-dom": "^5.3.3",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1"
   }
 }

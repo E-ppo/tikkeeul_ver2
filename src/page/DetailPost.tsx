@@ -1,4 +1,4 @@
 function DetailPost() {
-  return <div>ChooseTaesan</div>;
+  return <div>DetailPost</div>;
 }
 export default DetailPost;

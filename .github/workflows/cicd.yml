@@ -1,45 +1,45 @@
 name: CI
-
 on:
+  # Triggers the workflow on push events but only for the "main" branch
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: ["master"]
 
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
 jobs:
   build:
-    runs-on: ubuntu-18.04
-    steps: ubuntu-latest
-      - name: Checkout source code.  
-        uses: actions/checkout@master
+    runs-on: ubuntu-latest
+    steps:
+      # 소스를 가져옵니다.
+      - name: Checkout source code
+        uses: actions/checkout@main
 
-      - name: Cache node modules      
+      # 실행 속도를 빠르게 하기 위해 설치된 Node 모듈을 캐시하도록 설정합니다.
+      - name: Cache node modules
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.OS }}-main-build-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
-            
-      - name: Install Dependencies   
-        run: npm install
 
+      # 모듈을 설치합니다.
+      - name: Install Dependencies
+        run: yarn install
+
+      # 결과물을 만듭니다.
       - name: Build
-      run: CI=npm run build                
-        # run: CI=false npm run build
-      
-       
-      - name: Deploy    
+        run: CI= yarn build
+
+      # S3에 결과물을 업로드합니다.
+      - name: Deploy
         env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-              
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           aws s3 cp \
             --recursive \
             --region ${{ secrets.AWS_REGION }} \
             build s3://${{ secrets.BUCKET_NAME }}
-
-            

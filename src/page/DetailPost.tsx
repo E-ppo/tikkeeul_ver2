@@ -1,8 +1,4 @@
-
-function DetailPost(){
-  return(
-    <div>ChooseTeasan</div>
-
-  )
+function DetailPost() {
+  return <div>ChooseTaesan</div>;
 }
 export default DetailPost;

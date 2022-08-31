@@ -1,20 +1,14 @@
 import styled from 'styled-components';
-import Header from '../components/common/Header';
-import {
-  DayTikkeeulList,
-  Teasan,
-  TotalTikkeeul,
-  FavoriteTag,
-} from '../components/tikkeeul';
+import { Header, TotalTikkeeulPrice } from '../components/common';
+import { DayTikkeeulList, Teasan } from '../components/tikkeeul';
 
 function DailyTikkeeul() {
   return (
     <Wrap>
       <Header title={'데일리 티끌'} />
       <Teasan />
-      <TotalTikkeeul />
+      <TotalTikkeeulPrice fontSize={'1.2'} />
       <DayTikkeeulList />
-      <FavoriteTag />
     </Wrap>
   );
 }

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { HeaderLogo, HeaderHam } from '../../styles/assets/svg/common';
+import { Live } from '../../styles/assets/svg/community';
 import styled, { keyframes } from 'styled-components';
 
 const slider = keyframes`
@@ -30,7 +31,10 @@ const Header = (props: IPropsData) => {
   return (
     <Wrap>
       <HeaderLogo />
-      <span>{props.title}</span>
+      <span>
+        {props.title === '쓸까?말까?' ? <Live /> : ''}
+        {props.title}
+      </span>
       <HeaderHam
         onClick={() => {
           openModal();
@@ -47,7 +51,7 @@ const Header = (props: IPropsData) => {
               <MenuBar>
                 <div
                   onClick={() => {
-                    navigate('/');
+                    navigate('/dailytikkeeul');
                   }}>
                   데일리 티끌
                 </div>
@@ -77,14 +81,18 @@ const Header = (props: IPropsData) => {
                 </div>
                 <div
                   onClick={() => {
-                    navigate('/mypage');
+                    navigate('/');
                   }}>
                   About
                 </div>
               </MenuBar>
               <Footer>
-                <p>회원가입</p>
-                <p>로그인</p>
+                <span
+                  onClick={() => {
+                    navigate('/loginpage');
+                  }}>
+                  로그인
+                </span>
               </Footer>
             </Popup>
           </Window>
@@ -168,7 +176,9 @@ const MenuBar = styled.div`
 `;
 
 const Footer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+  padding: 1rem 0;
+  span {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
 `;

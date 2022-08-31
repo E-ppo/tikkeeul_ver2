@@ -1,4 +1,13 @@
+import { useState } from 'react';
+import { Header } from '../components/common';
+
 function MyPage() {
-  return <div>MyPage</div>;
+  const [title, setTitle] = useState('MY');
+  return (
+    <div>
+      <Header title={title} />
+      MyPage
+    </div>
+  );
 }
 export default MyPage;

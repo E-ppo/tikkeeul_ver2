@@ -4,6 +4,7 @@ import { ReactComponent as HeaderHam } from './headerHam.svg';
 import { ReactComponent as LeftArrowBlack } from './leftArrowBlack.svg';
 import { ReactComponent as RightArrowBlack } from './rightArrowBlack.svg';
 import { ReactComponent as NoticeHandBig } from './noticeHandBig.svg';
+import { ReactComponent as MainAddButton } from './mainAddButton.svg';
 
 export {
   HeaderLogo,
@@ -11,4 +12,5 @@ export {
   LeftArrowBlack,
   RightArrowBlack,
   NoticeHandBig,
+  MainAddButton,
 };

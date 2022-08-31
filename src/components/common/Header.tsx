@@ -36,6 +36,7 @@ const Header = (props: IPropsData) => {
         {props.title}
       </span>
       <HeaderHam
+        style={{ cursor: 'pointer' }}
         onClick={() => {
           openModal();
         }}

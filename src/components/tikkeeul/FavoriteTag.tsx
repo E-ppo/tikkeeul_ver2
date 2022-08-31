@@ -47,11 +47,10 @@ const Wrap = styled.div`
   height: 100px;
   display: flex;
   align-items: center;
-  margin: 0 30px;
 `;
 
 const ScrollArea = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
   overflow-x: scroll;

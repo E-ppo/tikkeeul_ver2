@@ -3,7 +3,7 @@ import {
   LeftArrowBlack,
   RightArrowBlack,
 } from '../../styles/assets/svg/common';
-import { FavoriteTag } from '../tikkeeul';
+import { FavoriteTag, LoadTikkeeulList } from '../tikkeeul';
 
 const DayTikkeeulList = () => {
   const today = new Date().toJSON().split('T', 1);
@@ -11,11 +11,16 @@ const DayTikkeeulList = () => {
   return (
     <Wrap>
       <DaySelectStyle>
-        <LeftArrowBlack />
+        <span>
+          <LeftArrowBlack />
+        </span>
         <span>{today}</span>
-        <RightArrowBlack />
+        <span>
+          <RightArrowBlack />
+        </span>
       </DaySelectStyle>
       <FavoriteTag />
+      <LoadTikkeeulList />
     </Wrap>
   );
 };
@@ -35,5 +40,6 @@ const DaySelectStyle = styled.div`
   span {
     font-size: 1rem;
     font-weight: 500;
+    cursor: pointer;
   }
 `;

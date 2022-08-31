@@ -27,13 +27,15 @@ const FavoriteTag = () => {
                 addTikkeeulList();
               }}>
               <span>#</span>
-              {favoriteList.itemName}
+              <span>{favoriteList.itemName}</span>
             </div>
-            <FavoritDelete
-              onClick={() => {
-                deleteFavoriteTag();
-              }}
-            />
+            <span>
+              <FavoritDelete
+                onClick={() => {
+                  deleteFavoriteTag();
+                }}
+              />
+            </span>
           </Tag>
         ))}
       </ScrollArea>
@@ -76,5 +78,6 @@ const Tag = styled.div`
   span {
     margin-right: 5px;
     font-weight: 700;
+    cursor: pointer;
   }
 `;

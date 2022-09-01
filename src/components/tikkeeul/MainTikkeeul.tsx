@@ -1,34 +1,36 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { Header } from '../components/common';
-import { MainTikkeeul, AddTikkeeul } from '../components/tikkeeul';
-import { MenuAddButtonMint } from '../styles/assets/svg/common';
-import { MainCancleAddButton } from '../styles/assets/svg/tikkeeulSvg';
+import { TotalTikkeeulPrice } from '../common';
+import { DayTikkeeulList, Teasan } from '../tikkeeul';
+import { TikkeeulData } from '../../data';
+
+import { MenuAddButtonMint } from '../../styles/assets/svg/common';
+import { MainCancleAddButton } from '../../styles/assets/svg/tikkeeulSvg';
 
 interface buttonStyle {
   buttonbottom: number;
 }
 
-function DailyTikkeeul() {
-  const [pageState, setPageState] = useState(<MainTikkeeul />);
+const MainTikkeeul = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [viewButton, setViewButton] = useState(true);
   return (
-    <Wrap>
-      <Header title={'데일리 티끌'} />
-      {pageState}
+    <div>
+      <Teasan />
+      <TotalTikkeeulPrice
+        totalPrice={TikkeeulData.totalPrice} //꼭 있어야하는 필수 프로퍼티
+        fontSize={'1.2'} // 없어도 되는거 (없으면 1rem)
+        divHight={'50'} // 없어도 되는거(px)
+      />
+      <DayTikkeeulList />
+
       {modalOpen ? (
         <>
           <ButtonFixed>
-            {viewButton ? (
-              <MainCancleAddButton
-                onClick={() => {
-                  setModalOpen(false);
-                }}
-              />
-            ) : (
-              ''
-            )}
+            <MainCancleAddButton
+              onClick={() => {
+                setModalOpen(false);
+              }}
+            />
           </ButtonFixed>
           <Modal>
             <ButtonArea>
@@ -40,12 +42,7 @@ function DailyTikkeeul() {
                   </div>
                 </ADD>
                 <ADD>
-                  <div
-                    onClick={() => {
-                      setViewButton(false);
-                      setModalOpen(false);
-                      setPageState(<AddTikkeeul />);
-                    }}>
+                  <div>
                     <span>티끌 추가하기</span>
                     <div></div>
                   </div>
@@ -56,26 +53,17 @@ function DailyTikkeeul() {
         </>
       ) : (
         <ButtonFixed>
-          {viewButton ? (
-            <MenuAddButtonMint
-              onClick={() => {
-                setModalOpen(true);
-              }}
-            />
-          ) : (
-            ''
-          )}
+          <MenuAddButtonMint
+            onClick={() => {
+              setModalOpen(true);
+            }}
+          />
         </ButtonFixed>
       )}
-    </Wrap>
+    </div>
   );
-}
-export default DailyTikkeeul;
-
-const Wrap = styled.div`
-  width: 100%;
-  height: 100%;
-`;
+};
+export default MainTikkeeul;
 
 const ButtonFixed = styled.div`
   position: fixed;

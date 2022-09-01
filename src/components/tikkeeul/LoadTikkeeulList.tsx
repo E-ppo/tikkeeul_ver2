@@ -9,7 +9,7 @@ const LoadTikkeeulList = () => {
   return (
     <Wrap>
       {TikkeeulData.data?.map((tData, idx) => (
-        <InnerWrap>
+        <InnerWrap key={idx}>
           <RightContents>
             <span>
               {tData.categoryId} <br />
@@ -53,7 +53,7 @@ const InnerWrap = styled.div`
   justify-content: space-between;
   height: 70px;
   border-bottom: 1px solid #f5f5f5;
-  padding: 1rem;
+  padding: 1rem 0;
   line-height: 200%;
 `;
 const RightContents = styled.div`

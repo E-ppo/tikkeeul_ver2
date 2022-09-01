@@ -5,15 +5,6 @@ import { HeaderLogo, HeaderHam } from '../../styles/assets/svg/common';
 import { Live } from '../../styles/assets/svg/community';
 import styled, { keyframes } from 'styled-components';
 
-const slider = keyframes`
-  from {
-    transform: translateX(200px);
-  }
-  to {
-    transform: translateX(0px);
-  }
-`;
-
 interface IPropsData {
   title: string;
 }
@@ -30,77 +21,79 @@ const Header = (props: IPropsData) => {
 
   return (
     <Wrap>
-      <HeaderLogo />
-      <span>
-        {props.title === '쓸까?말까?' ? <Live /> : ''}
-        {props.title}
-      </span>
-      <HeaderHam
-        style={{ cursor: 'pointer' }}
-        onClick={() => {
-          openModal();
-        }}
-      />
+      <InnerWrap>
+        <HeaderLogo />
+        <span>
+          {props.title === '쓸까?말까?' ? <Live /> : ''}
+          {props.title}
+        </span>
+        <HeaderHam
+          style={{ cursor: 'pointer' }}
+          onClick={() => {
+            openModal();
+          }}
+        />
 
-      {modalOpen ? (
-        <Backgroud>
-          <Window>
-            <Popup>
-              <ButtonArea>
-                <button onClick={closeModal}>X</button>
-              </ButtonArea>
-              <MenuBar>
-                <div
-                  onClick={() => {
-                    navigate('/dailytikkeeul');
-                  }}>
-                  데일리 티끌
-                </div>
-                <div
-                  onClick={() => {
-                    navigate('/choosetaesan');
-                  }}>
-                  태산정하기
-                </div>
-                <div
-                  onClick={() => {
-                    navigate('/community');
-                  }}>
-                  커뮤니티
-                </div>
-                <div
-                  onClick={() => {
-                    navigate('/ranking');
-                  }}>
-                  랭킹
-                </div>
-                <div
-                  onClick={() => {
-                    navigate('/mypage');
-                  }}>
-                  MY
-                </div>
-                <div
-                  onClick={() => {
-                    navigate('/');
-                  }}>
-                  About
-                </div>
-              </MenuBar>
-              <Footer>
-                <span
-                  onClick={() => {
-                    navigate('/loginpage');
-                  }}>
-                  로그인
-                </span>
-              </Footer>
-            </Popup>
-          </Window>
-        </Backgroud>
-      ) : (
-        ''
-      )}
+        {modalOpen ? (
+          <Backgroud>
+            <Window>
+              <Popup>
+                <ButtonArea>
+                  <button onClick={closeModal}>X</button>
+                </ButtonArea>
+                <MenuBar>
+                  <div
+                    onClick={() => {
+                      navigate('/dailytikkeeul');
+                    }}>
+                    데일리 티끌
+                  </div>
+                  <div
+                    onClick={() => {
+                      navigate('/choosetaesan');
+                    }}>
+                    태산정하기
+                  </div>
+                  <div
+                    onClick={() => {
+                      navigate('/community');
+                    }}>
+                    커뮤니티
+                  </div>
+                  <div
+                    onClick={() => {
+                      navigate('/ranking');
+                    }}>
+                    랭킹
+                  </div>
+                  <div
+                    onClick={() => {
+                      navigate('/mypage');
+                    }}>
+                    MY
+                  </div>
+                  <div
+                    onClick={() => {
+                      navigate('/');
+                    }}>
+                    About
+                  </div>
+                </MenuBar>
+                <Footer>
+                  <span
+                    onClick={() => {
+                      navigate('/loginpage');
+                    }}>
+                    로그인
+                  </span>
+                </Footer>
+              </Popup>
+            </Window>
+          </Backgroud>
+        ) : (
+          ''
+        )}
+      </InnerWrap>
     </Wrap>
   );
 };
@@ -108,6 +101,10 @@ export default Header;
 
 const Wrap = styled.div`
   width: 100wh;
+  border-bottom: 1px solid #dedede;
+`;
+
+const InnerWrap = styled.div`
   height: 50px;
   margin: 0 30px;
 
@@ -124,9 +121,9 @@ const Backgroud = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  z-index: 10;
 `;
 
 const Window = styled.div`
@@ -148,8 +145,17 @@ const Popup = styled.div`
 
   animation-duration: 0.3s;
   animation-timing-function: ease-out;
-  animation-name: ${slider};
+  animation-name: slider;
   animation-fill-mode: forwards;
+
+  @keyframes slider {
+    from {
+      transform: translateX(200px);
+    }
+    to {
+      transform: translateX(0px);
+    }
+  }
 `;
 const ButtonArea = styled.div`
   display: flex;

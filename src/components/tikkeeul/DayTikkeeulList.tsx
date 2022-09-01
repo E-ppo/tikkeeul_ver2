@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {
   LeftArrowBlack,
   RightArrowBlack,
-} from '../../styles/assets/svg/common';
+} from '../../styles/assets/svg/tikkeeulSvg';
 import { FavoriteTag, LoadTikkeeulList } from '../tikkeeul';
 
 const DayTikkeeulList = () => {

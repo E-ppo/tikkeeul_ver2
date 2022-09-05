@@ -1,17 +1,9 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { HeaderLogo, HeaderHam } from "../../styles/assets/svg";
-import styled, { keyframes } from "styled-components";
-
-const slider = keyframes`
-  from {
-    transform: translateX(200px);
-  }
-  to {
-    transform: translateX(0px);
-  }
-`;
+import { HeaderLogo, HeaderHam } from '../../styles/assets/svg/common';
+import { Live } from '../../styles/assets/svg/community';
+import styled, { keyframes } from 'styled-components';
 
 interface IPropsData {
   title: string;
@@ -29,75 +21,79 @@ const Header = (props: IPropsData) => {
 
   return (
     <Wrap>
-      <HeaderLogo />
-      <span>{props.title}</span>
-      <HeaderHam
-        onClick={() => {
-          openModal();
-        }}
-      />
+      <InnerWrap>
+        <HeaderLogo />
+        <span>
+          {props.title === '쓸까?말까?' ? <Live /> : ''}
+          {props.title}
+        </span>
+        <HeaderHam
+          style={{ cursor: 'pointer' }}
+          onClick={() => {
+            openModal();
+          }}
+        />
 
-      {modalOpen ? (
-        <Backgroud>
-          <Window>
-            <Popup>
-              <ButtonArea>
-                <button onClick={closeModal}>X</button>
-              </ButtonArea>
-              <MenuBar>
-                <div
-                  onClick={() => {
-                    navigate("/");
-                  }}
-                >
-                  데일리 티끌
-                </div>
-                <div
-                  onClick={() => {
-                    navigate("/choosetaesan");
-                  }}
-                >
-                  태산정하기
-                </div>
-                <div
-                  onClick={() => {
-                    navigate("/community");
-                  }}
-                >
-                  커뮤니티
-                </div>
-                <div
-                  onClick={() => {
-                    navigate("/ranking");
-                  }}
-                >
-                  랭킹
-                </div>
-                <div
-                  onClick={() => {
-                    navigate("/mypage");
-                  }}
-                >
-                  MY
-                </div>
-                <div
-                  onClick={() => {
-                    navigate("/mypage");
-                  }}
-                >
-                  About
-                </div>
-              </MenuBar>
-              <Footer>
-                <p>회원가입</p>
-                <p>로그인</p>
-              </Footer>
-            </Popup>
-          </Window>
-        </Backgroud>
-      ) : (
-        ""
-      )}
+        {modalOpen ? (
+          <Backgroud>
+            <Window>
+              <Popup>
+                <ButtonArea>
+                  <button onClick={closeModal}>X</button>
+                </ButtonArea>
+                <MenuBar>
+                  <div
+                    onClick={() => {
+                      navigate('/dailytikkeeul');
+                    }}>
+                    데일리 티끌
+                  </div>
+                  <div
+                    onClick={() => {
+                      navigate('/choosetaesan');
+                    }}>
+                    태산정하기
+                  </div>
+                  <div
+                    onClick={() => {
+                      navigate('/community');
+                    }}>
+                    커뮤니티
+                  </div>
+                  <div
+                    onClick={() => {
+                      navigate('/ranking');
+                    }}>
+                    랭킹
+                  </div>
+                  <div
+                    onClick={() => {
+                      navigate('/mypage');
+                    }}>
+                    MY
+                  </div>
+                  <div
+                    onClick={() => {
+                      navigate('/');
+                    }}>
+                    About
+                  </div>
+                </MenuBar>
+                <Footer>
+                  <span
+                    onClick={() => {
+                      navigate('/loginpage');
+                    }}>
+                    로그인
+                  </span>
+                </Footer>
+              </Popup>
+            </Window>
+          </Backgroud>
+        ) : (
+          ''
+        )}
+      </InnerWrap>
     </Wrap>
   );
 };
@@ -105,6 +101,10 @@ export default Header;
 
 const Wrap = styled.div`
   width: 100wh;
+  border-bottom: 1px solid #dedede;
+`;
+
+const InnerWrap = styled.div`
   height: 50px;
   margin: 0 30px;
 
@@ -112,7 +112,7 @@ const Wrap = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  font-family: "SEBANG_Gothic_Regular";
+  font-family: 'SEBANG_Gothic_Regular';
   font-size: 1.5rem;
 `;
 
@@ -121,9 +121,9 @@ const Backgroud = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  z-index: 10;
 `;
 
 const Window = styled.div`
@@ -145,8 +145,17 @@ const Popup = styled.div`
 
   animation-duration: 0.3s;
   animation-timing-function: ease-out;
-  animation-name: ${slider};
+  animation-name: slider;
   animation-fill-mode: forwards;
+
+  @keyframes slider {
+    from {
+      transform: translateX(200px);
+    }
+    to {
+      transform: translateX(0px);
+    }
+  }
 `;
 const ButtonArea = styled.div`
   display: flex;
@@ -174,7 +183,9 @@ const MenuBar = styled.div`
 `;
 
 const Footer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  font-family: "Noto Sans KR", sans-serif;
+  text-align: center;
+  padding: 1rem 0;
+  span {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
 `;

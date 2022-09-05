@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import Header from '../components/common/Header';
 
 function MyPage() {
+const [title, setTitle] = useState('MY');
   return (
     <>
-      <Header title={'MY'} />
+     <Header title={title} />
       <ProfileWrap>
         <ProfileImg />
         <div>

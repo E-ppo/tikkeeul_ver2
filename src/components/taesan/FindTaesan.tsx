@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { LeftArrowBlack, SearchIcon } from '../../styles/assets/svg';
+import { GoBack, SearchIcon } from '../../styles/assets/svg/common';
 import { MakeTaesan } from '../taesan/index';
 
 function FindTaesan() {

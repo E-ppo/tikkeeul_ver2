@@ -1,4 +1,11 @@
+import { Header } from '../components/common';
+
 function FindPassword() {
-  return <div>ChooseTaesan</div>;
+  return (
+    <div>
+      <Header title={'비밀번호 찾기'} />
+      FindPassword
+    </div>
+  );
 }
 export default FindPassword;

@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { DeleteBtn } from '../../styles/assets/svg';
-import { TotalTikkeeul } from '../tikkeeul';
+import { DeleteBtn } from '../../styles/assets/svg/common';
+import { TotalTikkeeulPrice } from '../common';
+import { TikkeeulData } from '../../data';
 
 function MyTaesan() {
   return (
     <>
-      <TotalTikkeeul />
+      <TotalTikkeeulPrice totalPrice={TikkeeulData.totalPrice} />
       <Wrap>
         <MainTaesan>
           <TaesanImg />

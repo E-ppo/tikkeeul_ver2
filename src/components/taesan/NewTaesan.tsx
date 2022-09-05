@@ -1,7 +1,6 @@
-import { LeftArrowBlack, SearchIcon } from '../../styles/assets/svg';
+import { GoBack, SearchIcon } from '../../styles/assets/svg/common';
 import styled from 'styled-components';
-import FindTaesan from './FindTaesan';
-import MakeTaesan from './MakeTaesan';
+import { FindTaesan, MakeTaesan } from '../taesan';
 import { useState } from 'react';
 
 type NewTaesanProps = {
@@ -19,7 +18,7 @@ function NewTaesan({ close }: NewTaesanProps) {
   );
 }
 
-const GobackBtn = styled(LeftArrowBlack)`
+const GobackBtn = styled(GoBack)`
   margin-bottom: 20px;
 `;
 

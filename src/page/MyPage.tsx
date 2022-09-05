@@ -1,11 +1,12 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import Header from '../components/common/Header';
 
 function MyPage() {
-const [title, setTitle] = useState('MY');
+  const [title, setTitle] = useState('MY');
   return (
     <>
-     <Header title={title} />
+      <Header title={title} />
       <ProfileWrap>
         <ProfileImg />
         <div>

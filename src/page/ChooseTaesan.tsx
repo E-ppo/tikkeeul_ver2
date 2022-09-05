@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import Header from '../components/common/Header';
-import { DeleteBtn, AddBtn } from '../styles/assets/svg';
-import { TotalTikkeeul } from '../components/tikkeeul/index';
-import FindTaesan from '../components/taesan/FindTaesan';
+import { DeleteBtn, AddBtn } from '../styles/assets/svg/common';
+import { MainTikkeeul } from '../components/tikkeeul';
 import { useState } from 'react';
-import { MyTaesan, NewTaesan } from '../components/taesan';
+import { MyTaesan, NewTaesan, FindTaesan } from '../components/taesan';
 
 function ChooseTaesan() {
   const [openFindTaesan, setOpenFindTaesan] = useState(false);

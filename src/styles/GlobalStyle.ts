@@ -31,9 +31,7 @@ body {
 	line-height: 1;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;
-    span{
-    font-weight: 700; 
-}
+
 }
 ol, ul {
 	list-style: none;

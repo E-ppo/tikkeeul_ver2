@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import { FullStar, EmptyStar } from '../../styles/assets/svg/tikkeeulSvg';
+import { AutoSearchItem } from '../common';
 
 const AddTikkeeul = () => {
   const [addStar, setAddStar] = useState(false);
@@ -10,7 +11,7 @@ const AddTikkeeul = () => {
     <Wrap>
       <InnerWrap>
         <SearchBox>
-          <input type='text'></input>
+          <AutoSearchItem />
         </SearchBox>
         <BlankBox></BlankBox>
         <AddItemBox>
@@ -55,7 +56,6 @@ const SearchBox = styled.div`
   height: 50px;
   display: flex;
   justify-content: center;
-  border: 1px solid;
 `;
 
 const BlankBox = styled.div``;

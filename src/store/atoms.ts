@@ -4,7 +4,7 @@ import { MainTikkeeul, AddTikkeeul } from '../components/tikkeeul';
 
 interface IComponentState {}
 
-export const ComponentStateAtom = atom<JsxElement>({
-  key: 'ComponentStateAtom',
-  default: typeAddTikkeeul,
-});
+// export const ComponentStateAtom = atom<JsxElement>({
+//   key: 'ComponentStateAtom',
+//   default: typeAddTikkeeul,
+// });

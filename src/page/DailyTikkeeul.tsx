@@ -5,7 +5,7 @@ import { MainTikkeeul, AddTikkeeul } from '../components/tikkeeul';
 import { MenuAddButtonMint, GoBack } from '../styles/assets/svg/common';
 import { MainCancleAddButton } from '../styles/assets/svg/tikkeeulSvg';
 import { useSetRecoilState } from 'recoil';
-import { ComponentStateAtom } from '../store/atoms';
+// import { ComponentStateAtom } from '../store/atoms';
 
 interface buttonStyle {
   buttonbottom: number;
@@ -16,7 +16,7 @@ function DailyTikkeeul() {
   const [viewButton, setViewButton] = useState(true);
   const [addFuntion, setAddFuntion] = useState(false);
 
-  const setComponentState = useSetRecoilState(ComponentStateAtom);
+  // const setComponentState = useSetRecoilState(ComponentStateAtom);
 
   return (
     <Wrap>
@@ -60,28 +60,27 @@ function DailyTikkeeul() {
             </ButtonArea>
           </Modal>
 
-          {addFuntion ? 
+          {/* {addFuntion ? 
                     setComponentState(<AddTikkeeul/>\)
-                    (
-  
-            <AddMenuComponent>
-              <Header title={'데일리 티끌'} />
+                    ( */}
 
-              <AddTitle>
-                <GoBack
-                  onClick={() => {
-                    setModalOpen(false);
-                    setAddFuntion(false);
-                  }}
-                />
-                <span>티끌 등록하기</span>
-                <div />
-              </AddTitle>
-              < />
-            </AddMenuComponent>
-          ) : (
+          <AddMenuComponent>
+            <Header title={'데일리 티끌'} />
+
+            <AddTitle>
+              <GoBack
+                onClick={() => {
+                  setModalOpen(false);
+                  setAddFuntion(false);
+                }}
+              />
+              <span>티끌 등록하기</span>
+              <div />
+            </AddTitle>
+          </AddMenuComponent>
+          {/* ) : (
             ''
-          )}
+          )} */}
         </>
       ) : (
         <ButtonFixed>

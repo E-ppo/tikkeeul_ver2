@@ -1,22 +1,33 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/common';
-import { MainTikkeeul, AddTikkeeul } from '../components/tikkeeul';
-import { MenuAddButtonMint } from '../styles/assets/svg/common';
+import {
+  MainTikkeeul,
+  AddTikkeeul,
+  AddNewTikkeeul,
+} from '../components/tikkeeul';
+import { MenuAddButtonMint, GoBack } from '../styles/assets/svg/common';
 import { MainCancleAddButton } from '../styles/assets/svg/tikkeeulSvg';
+import { useSetRecoilState } from 'recoil';
+// import { ComponentStateAtom } from '../store/atoms';
 
 interface buttonStyle {
   buttonbottom: number;
 }
 
 function DailyTikkeeul() {
-  const [pageState, setPageState] = useState(<MainTikkeeul />);
   const [modalOpen, setModalOpen] = useState(false);
   const [viewButton, setViewButton] = useState(true);
+  const [addFuntion, setAddFuntion] = useState(false);
+  const [viewState, setViewState] = useState(<AddNewTikkeeul />);
+
+  // const setComponentState = useSetRecoilState(ComponentStateAtom);
+
   return (
     <Wrap>
       <Header title={'데일리 티끌'} />
-      {pageState}
+      <MainTikkeeul />
+
       {modalOpen ? (
         <>
           <ButtonFixed>
@@ -24,12 +35,14 @@ function DailyTikkeeul() {
               <MainCancleAddButton
                 onClick={() => {
                   setModalOpen(false);
+                  setAddFuntion(true);
                 }}
               />
             ) : (
               ''
             )}
           </ButtonFixed>
+
           <Modal>
             <ButtonArea>
               <AnimationBox buttonbottom={150}>
@@ -42,9 +55,7 @@ function DailyTikkeeul() {
                 <ADD>
                   <div
                     onClick={() => {
-                      setViewButton(false);
-                      setModalOpen(false);
-                      setPageState(<AddTikkeeul />);
+                      setAddFuntion(true);
                     }}>
                     <span>티끌 추가하기</span>
                     <div></div>
@@ -53,6 +64,25 @@ function DailyTikkeeul() {
               </AnimationBox>
             </ButtonArea>
           </Modal>
+          {addFuntion ? (
+            <AddMenuComponent>
+              <Header title={'데일리 티끌'} />
+
+              <AddTitle>
+                <GoBack
+                  onClick={() => {
+                    setModalOpen(false);
+                    setAddFuntion(false);
+                  }}
+                />
+                <span>티끌 등록하기</span>
+                <div />
+              </AddTitle>
+              {viewState}
+            </AddMenuComponent>
+          ) : (
+            ''
+          )}
         </>
       ) : (
         <ButtonFixed>
@@ -83,6 +113,15 @@ const ButtonFixed = styled.div`
   right: 30px;
   cursor: pointer;
   z-index: 1;
+`;
+
+const AddMenuComponent = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 `;
 
 const Modal = styled.div`
@@ -143,5 +182,20 @@ const ADD = styled.div`
       background-color: #e0e0e0;
       border-radius: 50%;
     }
+  }
+`;
+
+const AddTitle = styled.div`
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 30px;
+  span {
+    font-size: 1.25rem;
+  }
+  div {
+    width: 12px;
+    height: 23px;
   }
 `;

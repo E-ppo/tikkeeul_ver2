@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { GoBack } from '../../styles/assets/svg/common';
+
 import { FullStar, EmptyStar } from '../../styles/assets/svg/tikkeeulSvg';
+import { AutoSearchItem } from '../common';
 
 const AddTikkeeul = () => {
   const [addStar, setAddStar] = useState(false);
@@ -9,14 +10,10 @@ const AddTikkeeul = () => {
   return (
     <Wrap>
       <InnerWrap>
-        <AddTitle>
-          <GoBack />
-          <span>티끌 등록하기</span>
-          <div />
-        </AddTitle>
         <SearchBox>
-          <input type='text'></input>
+          <AutoSearchItem />
         </SearchBox>
+        <BlankBox></BlankBox>
         <AddItemBox>
           <div
             onClick={() => {
@@ -41,8 +38,6 @@ export default AddTikkeeul;
 
 const Wrap = styled.div`
   width: 100%;
-  max-height: 1200px;
-  min-height: 700px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -50,33 +45,21 @@ const Wrap = styled.div`
 `;
 
 const InnerWrap = styled.div`
-  margin: 0 30px;
-`;
-
-const AddTitle = styled.div`
-  height: 50px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  span {
-    font-size: 1.25rem;
-  }
-  div {
-    width: 12px;
-    height: 23px;
-  }
+  flex-direction: column;
+  margin: 0 30px;
+  height: 80%;
+  justify-content: space-evenly;
 `;
 
 const SearchBox = styled.div`
-  margin-top: 15%;
   height: 50px;
   display: flex;
   justify-content: center;
-  border: 1px solid;
 `;
 
+const BlankBox = styled.div``;
 const AddItemBox = styled.div`
-  margin-top: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;

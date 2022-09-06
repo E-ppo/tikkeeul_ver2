@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { FullStar, EmptyStar } from '../../styles/assets/svg/tikkeeulSvg';
 
-const AddTikkeeul = () => {
+const AddNewTikkeeul = () => {
   const [addStar, setAddStar] = useState(false);
 
   return (
@@ -33,7 +33,7 @@ const AddTikkeeul = () => {
     </Wrap>
   );
 };
-export default AddTikkeeul;
+export default AddNewTikkeeul;
 
 const Wrap = styled.div`
   width: 100%;

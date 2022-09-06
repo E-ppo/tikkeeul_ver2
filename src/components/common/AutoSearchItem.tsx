@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { SearchIcon } from '../../styles/assets/svg/common';
 import { Item } from '../../data';
+import { selectedItem } from '../../store/atoms';
+// import { useRecoilState, useSetRecoilState } from 'recoil';
 
 interface ISearchBarStyle {
   radiusStyle?: boolean;
@@ -23,7 +25,7 @@ const AutoSearchItem = () => {
   // filter된 아이템 리스트
   const [serachItemList, setSerachItemList] = useState<IAllItemList[] | []>([]);
   const [selectingItemIdx, setSelectingItemIdx] = useState(0);
-  const [addItem, setAddItem] = useState<IAllItemList>();
+  // const [addItem, setAddItem] = useRecoilState(selectedItem);
 
   const changeInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -40,7 +42,7 @@ const AutoSearchItem = () => {
       } else if (e.key === 'ArrowUp' && serachItemList.length >= 0) {
         setSelectingItemIdx(selectingItemIdx - 1);
       } else if (e.key === 'Enter' && serachItemList.length >= 0) {
-        selectedItem(selectingItemIdx);
+        chooseItem(selectingItemIdx);
       }
     }
   };
@@ -58,8 +60,8 @@ const AutoSearchItem = () => {
     }
   };
 
-  const selectedItem = (idx: number) => {
-    setAddItem(serachItemList[idx]);
+  const chooseItem = (idx: number) => {
+    // setAddItem(serachItemList[idx]);
   };
 
   useEffect(showSearchList, [inputValue]); //메모이제이션 할 수 있는 방법 생각해보기.....
@@ -84,7 +86,7 @@ const AutoSearchItem = () => {
                 <li
                   key={item.itemId}
                   onClick={() => {
-                    selectedItem(idx);
+                    chooseItem(idx);
                   }}
                   onMouseOver={() => {
                     setSelectingItemIdx(idx);

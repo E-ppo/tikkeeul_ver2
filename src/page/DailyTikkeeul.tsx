@@ -15,6 +15,7 @@ function DailyTikkeeul() {
   const [modalOpen, setModalOpen] = useState(false);
   const [viewButton, setViewButton] = useState(true);
   const [addFuntion, setAddFuntion] = useState(false);
+  const [viewState, setViewState] = useState(<AddTikkeeul />);
 
   // const setComponentState = useSetRecoilState(ComponentStateAtom);
 
@@ -59,28 +60,25 @@ function DailyTikkeeul() {
               </AnimationBox>
             </ButtonArea>
           </Modal>
+          {addFuntion ? (
+            <AddMenuComponent>
+              <Header title={'데일리 티끌'} />
 
-          {/* {addFuntion ? 
-                    setComponentState(<AddTikkeeul/>\)
-                    ( */}
-
-          <AddMenuComponent>
-            <Header title={'데일리 티끌'} />
-
-            <AddTitle>
-              <GoBack
-                onClick={() => {
-                  setModalOpen(false);
-                  setAddFuntion(false);
-                }}
-              />
-              <span>티끌 등록하기</span>
-              <div />
-            </AddTitle>
-          </AddMenuComponent>
-          {/* ) : (
+              <AddTitle>
+                <GoBack
+                  onClick={() => {
+                    setModalOpen(false);
+                    setAddFuntion(false);
+                  }}
+                />
+                <span>티끌 등록하기</span>
+                <div />
+              </AddTitle>
+              {viewState}
+            </AddMenuComponent>
+          ) : (
             ''
-          )} */}
+          )}
         </>
       ) : (
         <ButtonFixed>

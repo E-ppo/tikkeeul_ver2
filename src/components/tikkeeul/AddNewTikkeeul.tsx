@@ -1,33 +1,44 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
-
 import { FullStar, EmptyStar } from '../../styles/assets/svg/tikkeeulSvg';
+import { Category } from '../common';
 
 const AddNewTikkeeul = () => {
   const [addStar, setAddStar] = useState(false);
+  const itemNameRef = useRef<HTMLInputElement>(null);
+  const dfPrice = useRef<HTMLInputElement>(null);
+
+  const addNewItemTikkeeul = () => {
+    console.log(itemNameRef.current?.value);
+    console.log(dfPrice.current?.value);
+  };
 
   return (
     <Wrap>
       <InnerWrap>
-        <SearchBox>
-          <input type='text'></input>
-        </SearchBox>
-        <BlankBox></BlankBox>
-        <AddItemBox>
-          <div
-            onClick={() => {
-              addStar ? setAddStar(false) : setAddStar(true);
-            }}>
-            {addStar ? <FullStar /> : <EmptyStar />}
-          </div>
-
-          <span>
-            아이스크림
-            <br /> 3000원
-          </span>
-        </AddItemBox>
+        <ItemBox>
+          <ItemTitle>카테고리</ItemTitle>
+          <InputBox>
+            <Category />
+          </InputBox>
+        </ItemBox>
+        <ItemBox>
+          <ItemTitle>이름</ItemTitle>
+          <InputBox>
+            <input type='text' ref={itemNameRef} />
+          </InputBox>
+        </ItemBox>
+        <ItemBox>
+          <ItemTitle>가격</ItemTitle>
+          <InputBox>
+            <input type='number' ref={dfPrice} />
+          </InputBox>
+        </ItemBox>
       </InnerWrap>
-      <Footer>
+      <Footer
+        onClick={() => {
+          addNewItemTikkeeul();
+        }}>
         <span>티끌 등록하기</span>
       </Footer>
     </Wrap>
@@ -38,38 +49,39 @@ export default AddNewTikkeeul;
 const Wrap = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 `;
 
 const InnerWrap = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 30px;
-  height: 80%;
-  justify-content: space-evenly;
+  margin: 20% 30px;
+  gap: 1rem;
 `;
 
-const SearchBox = styled.div`
-  height: 50px;
+const ItemBox = styled.div`
+  display: flex;
+  align-items: center;
+  height: 40px;
+`;
+
+const ItemTitle = styled.div`
+  width: 20%;
+  font-size: 1rem;
+  text-align: right;
+  padding: 0 5% 0 0;
+`;
+const InputBox = styled.div`
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  border: 1px solid;
-`;
 
-const BlankBox = styled.div``;
-const AddItemBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  border-bottom: 1px solid;
-
-  span {
-    line-height: 120%;
-    font-size: 2.5em;
-    margin: 10px 0;
+  input {
+    width: 100%;
+    border: 1px solid #cccccc;
+    border-radius: 30px;
+    text-align: center;
+    outline: none;
   }
 `;
 
@@ -82,6 +94,7 @@ const Footer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   span {
     font-size: 1.125rem;
     color: white;

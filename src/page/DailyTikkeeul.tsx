@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/common';
-import { MainTikkeeul, AddTikkeeul } from '../components/tikkeeul';
+import {
+  MainTikkeeul,
+  AddTikkeeul,
+  AddNewTikkeeul,
+} from '../components/tikkeeul';
 import { MenuAddButtonMint, GoBack } from '../styles/assets/svg/common';
 import { MainCancleAddButton } from '../styles/assets/svg/tikkeeulSvg';
 import { useSetRecoilState } from 'recoil';
@@ -15,7 +19,7 @@ function DailyTikkeeul() {
   const [modalOpen, setModalOpen] = useState(false);
   const [viewButton, setViewButton] = useState(true);
   const [addFuntion, setAddFuntion] = useState(false);
-  const [viewState, setViewState] = useState(<AddTikkeeul />);
+  const [viewState, setViewState] = useState(<AddNewTikkeeul />);
 
   // const setComponentState = useSetRecoilState(ComponentStateAtom);
 

@@ -1,5 +1,5 @@
 import TotalTikkeeulPrice from './TotalTikkeeulPrice';
 import Header from './Header';
 import AutoSearchItem from './AutoSearchItem';
-
-export { TotalTikkeeulPrice, Header, AutoSearchItem };
+import Category from './Category';
+export { TotalTikkeeulPrice, Header, AutoSearchItem, Category };

@@ -24,10 +24,10 @@ const Login = () => {
 
       <LoginTextBox>
         <li>
-          <input placeholder='아이디' />
+          <input type='text' placeholder='아이디' />
         </li>
         <li>
-          <input placeholder='비밀번호' />
+          <input type='text' placeholder='비밀번호' />
         </li>
         <li>
           <span
@@ -85,9 +85,9 @@ const LoginTitleWrap = styled.div`
     span {
       font-size: 2rem;
       color: ${(props) => props.theme.mainMintColor};
-      font-family: 'SEBANG_Gothic_Regular';
       font-weight: 700;
-      line-height: 200%;
+      line-height: 150%;
+      font-family: 'SEBANG_Gothic_Regular';
     }
   }
   span:last-child {
@@ -103,14 +103,17 @@ const LoginTextBox = styled.ul`
     height: 60px;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #dddddd;
 
     input {
       width: 100%;
-      height: 95%;
+      height: 90%;
       font-size: 1.2rem;
       border: none;
-      border-bottom: 1px solid #dddddd;
       outline: none;
+      &::placeholder {
+        color: #cccccc;
+      }
     }
 
     span {
@@ -153,7 +156,7 @@ const SubManuBox = styled.div`
 `;
 
 const SocialLoginBox = styled.div`
-  max-height: 260px;
+  max-height: 200px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -166,6 +169,7 @@ const SocialLoginBox = styled.div`
     justify-content: center;
     cursor: pointer;
     span {
+      margin-top: 10px;
       text-align: center;
     }
   }

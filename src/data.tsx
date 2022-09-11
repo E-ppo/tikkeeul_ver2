@@ -122,3 +122,63 @@ export const Item = {
     },
   ],
 };
+
+export const BoardListData = {
+  data: [
+    {
+      boardId: 1,
+      nickname: '호호',
+      title: '나 택시타는거 많이 줄였어!',
+      contents:
+        '어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 ',
+      image:
+        'https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1PVr/image/XHfGLoco4EjxAaDXzHzXQsvuaRQ.jpg',
+      categoryName: '교통비',
+      goalItemId: 10,
+      likeCount: 10,
+      viewCount: 150,
+      createdAt: '2022-04-29 13:00',
+    },
+    {
+      boardId: 2,
+      nickname: ' Eppo',
+      title: '커피는 역시 회사커피지',
+      contents:
+        '어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 ',
+      image: 'https://dimg.donga.com/wps/NEWS/IMAGE/2022/05/24/113578792.1.jpg',
+      categoryName: '카페/간식',
+      goalItemId: 11,
+      likeCount: 20,
+      viewCount: 110,
+      createdAt: '2022-04-30 12:00',
+    },
+    {
+      boardId: 3,
+      nickname: '민디민디',
+      title: '사고싶을 때, 나는 호흡을 가다듬지',
+      contents:
+        '어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 ',
+      image:
+        'https://newsimg-hams.hankookilbo.com/2021/11/05/6210ea9d-782b-455f-bb10-3e92fecd92f8.jpg',
+      categoryName: '온라인쇼핑',
+      goalItemId: 12,
+      likeCount: 50,
+      viewCount: 200,
+      createdAt: '2022-04-30 13:00',
+    },
+    {
+      boardId: 3,
+      nickname: '민경둥이',
+      title: '역시 약속을 줄이니 식비가 줄어드네요 ㅠㅠ',
+      contents:
+        '어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 ',
+      image:
+        'http://newsimg.hankookilbo.com/2015/01/19/201501190986189565_1.jpg',
+      categoryName: '식비',
+      goalItemId: 13,
+      likeCount: 50,
+      viewCount: 300,
+      createdAt: '2022-04-30 19:00',
+    },
+  ],
+};
